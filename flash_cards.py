@@ -259,9 +259,9 @@ def mark_known(card_id, card_type):
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != os.environ.get('USERNAME')
+        if request.form['username'] != os.environ.get('USERNAME', None)
             error = 'Invalid username or password!'
-        elif request.form['password'] != os.environ.get('PASSWORD')
+        elif request.form['password'] != os.environ.get('PASSWORD', None)
             error = 'Invalid username or password!'
         else:
             session['logged_in'] = True
