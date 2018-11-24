@@ -12,3 +12,5 @@ RUN chmod +x /entrypoint.sh
 VOLUME /src/db
 
 CMD ["/entrypoint.sh"]
+
+CMD gunicorn --bind 0.0.0.0:$PORT flash_cards:app
